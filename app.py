@@ -14,10 +14,12 @@ from flask import Flask, request
  
  
 def create_app(spark_context, dataset_path):
-    global Classification_engine 
- 
-    Classification_engine = ClassificationEngine(spark_context, dataset_path)    
-    
-    app = Flask(__name__)
-    app.register_blueprint(main)
-    return app
+	global Classification_engine
+
+	Classification_engine = ClassificationEngine(spark_context,
+												 dataset_path,1)
+	estimator=Classification_engine.estimator
+	model=Classification_engine.train_alg(estimator,1)
+	app = Flask(__name__)
+	app.register_blueprint(main)
+	return app

@@ -5,13 +5,14 @@ from app import create_app
 
  
 def init_spark_session():
-    # load spark session
-    spark = SparkSession.builder.appName('GSK').getOrCreate()
-    # IMPORTANT: pass aditional Python modules to each worker
-    spark.sparkContext.addPyFile('app.py')
-    spark.sparkContext.addPyFile('classification.py')
- 
-    return spark
+	# load spark session
+	spark = SparkSession.builder.appName('GSK_1').getOrCreate()
+	# IMPORTANT: pass aditional Python modules to each worker
+	spark.sparkContext.setLogLevel("ERROR")
+	spark.sparkContext.addPyFile('app.py')
+	spark.sparkContext.addPyFile('classification.py')
+	spark.sparkContext.addPyFile('estimators.py')
+	return spark
  
  
 def run_server(app):
