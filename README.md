@@ -54,16 +54,20 @@ The category predicted is BICYCLES with a probability of 0.9626641820825794. The
 http://127.0.0.1:15435/1/predictions? is the entry point, you can choose the predictor changing the number after the port /1/. 1 means use Logistic Regression , 2 means use Naive Bayes
 after predictions? you have the three paramethers:
 
-main_text=UNIVEGA%20%TERRENO%20%10%20%HE%20%MATTBLAUGRAU%20%45%20%CM(Remark change spaces and special simbols for URI quotation mark)
-&
-add_text=1_7_4
-&
-manufacturer=UNIVEGA
+(Remark change spaces and special simbols for URI quotation mark)
+# main_text=UNIVEGA%20%TERRENO%20%10%20%HE%20%MATTBLAUGRAU%20%45%20%CM  
+
+
+
+# add_text=1_7_4
+
+# manufacturer=UNIVEGA
 
 I took the last 10 records of the dataset and they were not used for training or evaluation so they are completelly new for the predictors. The app answer with the category predicted, the probability of the class and the algoritm use. Notice that there is 4 Classes of products , and I am returning the high probability among the four
 
 
 H:\Dropbox\python\curl-7.62.0-win64-mingw\bin>curl http://127.0.0.1:5435/1/predictions?main_text=LAVAMAT%20%63479%20%FL%20%A%20%WASCHVOLLAUTOMAT&add_text=WASCHMASCHINEN&manufacturer=AEG
+
 The category predicted is WASHINGMACHINES with a probability of 0.40677060830262707. The algorithm use for preditions is Logistic Regression.
 
 ### Accuraccy
@@ -85,20 +89,35 @@ H:\Dropbox\python\curl-7.62.0-win64-mingw\bin>curl http://127.0.0.1:5435/2/predi
 
 H:\Dropbox\python\GFK>spark-submit server.py
 18/12/02 15:15:33 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
 INFO:classification:Starting up the Classification Engine:
+
 INFO:classification:Loading Data Training...
+
 INFO:classification:Preprocessing data...
+
 INFO:classification:First Transformation data...
+
 INFO:classification:Creating grouped objects...
+
 INFO:classification:Second Transformation data. Feature Creation...
+
 INFO:classification:Splitting the data...
+
 Training Dataset Count: 5654
+
 Test Dataset Count: 2335
+
 INFO:classification:Creating Estimators...
+
 INFO:classification:Creating Logistic Regression...
+
 INFO:estimators:Training Logistic Regression...
+
 INFO:estimators:Testing  Logistic Regression...
+
 INFO:estimators:Saving to disk Logistic Regression...
+
 INFO:estimators:Evaluating the model Logistic Regression...
 
 
@@ -106,9 +125,13 @@ INFO:estimators:Evaluating the model Logistic Regression...
 
 
 INFO:classification:Creating Naives Bayes...
+
 INFO:estimators:Training Naive Bayes...
+
 INFO:estimators:Testing  Logistic Regression...
+
 INFO:estimators:Saving to disk Naive Bayes...
+
 INFO:estimators:Evaluating the model Naive Baves...
 
 
@@ -116,12 +139,19 @@ INFO:estimators:Evaluating the model Naive Baves...
 
 
 [02/Dec/2018:15:17:54] ENGINE Bus STARTING
+
 INFO:cherrypy.error:[02/Dec/2018:15:17:54] ENGINE Bus STARTING
+
 [02/Dec/2018:15:17:54] ENGINE Started monitor thread 'Autoreloader'.
+
 INFO:cherrypy.error:[02/Dec/2018:15:17:54] ENGINE Started monitor thread 'Autoreloader'.
+
 [02/Dec/2018:15:17:54] ENGINE Serving on http://127.0.0.1:5435
+
 INFO:cherrypy.error:[02/Dec/2018:15:17:54] ENGINE Serving on http://127.0.0.1:5435
+
 [02/Dec/2018:15:17:54] ENGINE Bus STARTED
+
 INFO:cherrypy.error:[02/Dec/2018:15:17:54] ENGINE Bus STARTED
 
 
