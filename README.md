@@ -1,4 +1,4 @@
-### HTTP REST-API for ML MultiClass Classification Problem" 
+### HTTP REST-API for ML MultiClass Classification Problem 
 
 In this document is described the solution proposed for this problem. I use pyspark 2.3.4 and
 flask 1.0.2 , Cherrypy 17.4.1
