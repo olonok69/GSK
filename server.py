@@ -6,7 +6,7 @@ from app import create_app
  
 def init_spark_session():
 	# load spark session
-	spark = SparkSession.builder.appName('GSK_1').getOrCreate()
+	spark = SparkSession.builder.appName('GSK_2').getOrCreate()
 	# IMPORTANT: pass aditional Python modules to each worker
 	spark.sparkContext.setLogLevel("ERROR")
 	spark.sparkContext.addPyFile('app.py')
@@ -27,8 +27,8 @@ def run_server(app):
     cherrypy.config.update({
         'engine.autoreload.on': True,
         'log.screen': True,
-        'server.socket_port': 5432,
-        'server.socket_host': '0.0.0.0'
+        'server.socket_port': 15435,
+        'server.socket_host': '127.0.0.1'
     })
  
     # Start the CherryPy WSGI web server
